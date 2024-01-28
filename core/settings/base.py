@@ -70,8 +70,6 @@ TEMPLATES = [
 ]
 
 
-ASGI_APPLICATION = "core.asgi.application"
-
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
