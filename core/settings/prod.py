@@ -11,7 +11,7 @@ DATABASES = {
         "DATABASE_URL", conn_max_age=600, ssl_require=True
     )
 }
-ALLOWED_HOSTS += ["nsc-test-api-6c116123a4d7.herokuapp.com"]
+ALLOWED_HOSTS += ["nsc-test-4db42f397f71.herokuapp.com"]
 WSGI_APPLICATION = "core.wsgi.prod.application"
 
 
@@ -26,7 +26,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:3002",
+    "http://localhost:3003",
     "https://support.hotelproxi.com",
+    "https://nsc-test-4db42f397f71.herokuapp.com",
 )
 CORS_ORIGIN_REGEX_WHITELIST = [
     r"^https://\w+\.hotelproxi.com$",
