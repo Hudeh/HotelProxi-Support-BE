@@ -13,4 +13,6 @@ dj-database-url
 gunicorn
 sentry-sdk
 channels-redis 
-rdis
+redis
+django-storages
+boto3

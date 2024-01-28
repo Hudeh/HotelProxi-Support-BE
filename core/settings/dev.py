@@ -1,6 +1,7 @@
 """Use this for development"""
 
 from .base import *
+
 DEBUG = True
 WSGI_APPLICATION = "core.wsgi.dev.application"
 AUTH_PASSWORD_VALIDATORS = [
@@ -22,8 +23,12 @@ CHANNEL_LAYERS = {
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "support",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
@@ -33,8 +38,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3002",
 ]
 CORS_ORIGIN_ALLOW_ALL = True
-STATIC_URL = '/staticfiles/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL = '/mediafiles/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_URL = "/staticfiles/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+MEDIA_URL = "/mediafiles/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)

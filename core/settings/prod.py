@@ -11,8 +11,7 @@ DATABASES = {
         "DATABASE_URL", conn_max_age=600, ssl_require=True
     )
 }
-# ALLOWED_HOSTS += ["erpp.shipperscouncil.gov.ng",
-#                   "rsd.shipperscouncil.gov.ng","demurrage.shipperscouncil.gov.ng"]
+ALLOWED_HOSTS += ["nsc-test-api-6c116123a4d7.herokuapp.com"]
 WSGI_APPLICATION = "core.wsgi.prod.application"
 
 
@@ -47,9 +46,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [
-                "redis://redis-cluster.alsn3y.ng.0001.euw2.cache.amazonaws.com:6379/0"
-            ],
+            "hosts": [config("REDIS")],
         },
     },
 }
