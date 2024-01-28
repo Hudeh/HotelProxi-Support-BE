@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn core.wsgi.prod --log-file - --log-level debug
+web: daphne core.asgi:application --port $PORT --bind 0.0.0.0 -v2
