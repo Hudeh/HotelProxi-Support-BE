@@ -30,7 +30,7 @@ CORS_ORIGIN_WHITELIST = (
 )
 CORS_ORIGIN_REGEX_WHITELIST = [
     r"^https://\w+\.hotelproxi.com$",
-    r"^https://\w+\.hotelproxie.com$",
+    r"^https://\w+\.herokuapp.com$",
     r"^http://\w+\:3000$",
     r"^http://\w+\:3001$",
     r"^http://\w+\:3002$",
@@ -46,7 +46,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [config("REDIS")],
+            "hosts": [config("REDIS_URL")],
         },
     },
 }
