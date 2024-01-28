@@ -2,6 +2,15 @@ django
 channels==3.0.5
 drf-yasg
 djangorestframework 
+python-decouple
 Pillow
+postgres
+psycopg2-binary
+psycopg2-pool
 djangorestframework-simplejwt
 django-cors-headers
+dj-database-url
+gunicorn
+sentry-sdk
+channels-redis 
+rdis

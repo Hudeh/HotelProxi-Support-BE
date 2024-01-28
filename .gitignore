@@ -11,3 +11,5 @@ setup.cfg
 .pytest_cache
 *.sqlite3
 .coverage
+*migrations
+.env

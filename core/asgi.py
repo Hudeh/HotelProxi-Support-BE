@@ -7,7 +7,7 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 
 import chat.routing
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hyperchat.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 
 application = ProtocolTypeRouter(
     {
