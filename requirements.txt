@@ -14,3 +14,5 @@ gunicorn
 sentry-sdk
 channels-redis 
 redis
+django-storages
+boto3
