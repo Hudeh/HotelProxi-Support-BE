@@ -5,7 +5,7 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from decouple import config
 import chat.routing
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", config("ENVIRONMENT"))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings.prod")
 
 application = ProtocolTypeRouter(
     {
