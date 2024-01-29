@@ -15,6 +15,7 @@ app = Celery(
     redbeat_redis_url=config("REDIS_URL"),
     broker_use_ssl={"ssl_cert_reqs": ssl.CERT_NONE},
     redis_backend_use_ssl={"ssl_cert_reqs": ssl.CERT_NONE},
+    broker_connection_retry_on_startup=True
 )
 
 app.config_from_object(settings, namespace="CELERY")
