@@ -16,7 +16,7 @@ MANAGERS = ADMINS
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = ["nsc-test-4db42f397f71.herokuapp.com"]
+ALLOWED_HOSTS = ["nsc-test-4db42f397f71.herokuapp.com","support.hotelproxi.com"]
 
 
 LOGOUT_REDIRECT_URL = "/"
