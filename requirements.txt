@@ -1,9 +1,10 @@
 django
-channels==3.0.5
+channels
 drf-yasg
 djangorestframework 
 python-decouple
 Pillow
+celery
 postgres
 psycopg2-binary
 psycopg2-pool
@@ -16,4 +17,6 @@ channels-redis
 redis
 django-storages
 boto3
-daphne
+django-celery-beat
+django-celery-results
+django-timezone-field

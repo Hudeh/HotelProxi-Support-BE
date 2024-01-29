@@ -27,7 +27,6 @@ LOGIN_URL = "/login/"
 # Application definition
 
 INSTALLED_APPS = [
-    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -38,6 +37,8 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt.token_blacklist",
     "channels",
     "storages",
+    "django_celery_beat",
+    "django_celery_results",
     "user",
     "chat",
     "corsheaders",
@@ -185,3 +186,11 @@ REDOC_SETTINGS = {
 }
 
 AUTH_USER_MODEL = "user.ChatUser"
+
+# CELERY SETTINGS
+CELERY_BROKER_URL = "redis://redis:6379"
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TASK_SELERLIZER = "json"
+CELERY_TIMEZONE = "Africa/Lagos"
