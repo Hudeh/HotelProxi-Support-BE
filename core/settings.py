@@ -16,7 +16,7 @@ MANAGERS = ADMINS
 SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = ["nsc-test-4db42f397f71.herokuapp.com","support.hotelproxi.com"]
+ALLOWED_HOSTS = ["nsc-test-4db42f397f71.herokuapp.com", "support.hotelproxi.com"]
 
 
 LOGOUT_REDIRECT_URL = "/"
@@ -114,9 +114,8 @@ ASGI_APPLICATION = "core.asgi.application"
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [config("REDIS_URL")]
-        },
+        "CONFIG": {"hosts": [config("REDIS_URL")]},
+        "OPTIONS": {"ssl_cert_reqs": None},
     },
 }
 
