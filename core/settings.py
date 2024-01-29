@@ -115,7 +115,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": ["redis://redis-cluster.alsn3y.ng.0001.euw2.cache.amazonaws.com:6379/0"],
+            "hosts": [config("REDIS_URL")],
         },
     },
 }
@@ -188,8 +188,8 @@ REDOC_SETTINGS = {
 AUTH_USER_MODEL = "user.ChatUser"
 
 # CELERY SETTINGS
-CELERY_BROKER_URL = "redis://redis:6379"
-CELERY_RESULT_BACKEND = "django-db"
+CELERY_BROKER_URL = config("REDIS_URL")
+CELERY_RESULT_BACKEND = config("REDIS_URL")
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TASK_SELERLIZER = "json"
