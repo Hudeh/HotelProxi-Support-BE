@@ -10,15 +10,9 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 
 app = Celery(
     "core",
-    broker=config(
-        "redis://redis-cluster.alsn3y.ng.0001.euw2.cache.amazonaws.com:6379/0"
-    ),
-    backend=config(
-        "redis://redis-cluster.alsn3y.ng.0001.euw2.cache.amazonaws.com:6379/0"
-    ),
-    redbeat_redis_url=config(
-        "redis://redis-cluster.alsn3y.ng.0001.euw2.cache.amazonaws.com:6379/0"
-    ),
+    broker="redis://redis-cluster.alsn3y.ng.0001.euw2.cache.amazonaws.com:6379/0",
+    backend="redis://redis-cluster.alsn3y.ng.0001.euw2.cache.amazonaws.com:6379/0",
+    redbeat_redis_url="redis://redis-cluster.alsn3y.ng.0001.euw2.cache.amazonaws.com:6379/0",
     broker_use_ssl={"ssl_cert_reqs": ssl.CERT_NONE},
     redis_backend_use_ssl={"ssl_cert_reqs": ssl.CERT_NONE},
 )
