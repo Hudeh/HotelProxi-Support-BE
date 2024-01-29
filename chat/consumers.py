@@ -3,7 +3,7 @@ import base64
 from django.utils.timesince import timesince
 from django.core.files.base import ContentFile
 from channels.generic.websocket import AsyncWebsocketConsumer
-from channels.exceptions.StopConsumer import StopConsumer
+from channels.consumer import StopConsumer
 from asgiref.sync import sync_to_async
 from .models import ChatRoom, Message
 from user.models import ChatUser
