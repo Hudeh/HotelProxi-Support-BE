@@ -5,7 +5,10 @@ from decouple import config
 import dj_database_url
 from sentry_sdk.integrations.django import DjangoIntegration
 import sentry_sdk
+import ssl
 
+ssl_context = ssl.SSLContext()
+ssl_context.check_hostname = False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -111,11 +114,12 @@ SECURE_SSL_REDIRECT = True
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 ASGI_APPLICATION = "core.asgi.application"
+heroku_redis_ssl_host = {"address": config("REDIS_URL"), "ssl": ssl_context}
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [config("REDIS_URL")],
+            "hosts": (heroku_redis_ssl_host,)
         },
     },
 }
