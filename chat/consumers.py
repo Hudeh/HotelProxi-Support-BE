@@ -3,6 +3,7 @@ import base64
 from django.utils.timesince import timesince
 from django.core.files.base import ContentFile
 from channels.generic.websocket import AsyncWebsocketConsumer
+from channels.exceptions.StopConsumer import StopConsumer
 from asgiref.sync import sync_to_async
 from .models import ChatRoom, Message
 from user.models import ChatUser
@@ -30,8 +31,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
         await self.set_room_active()
 
     async def disconnect(self, close_code):
+        # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-        await self.set_room_closed()
+        raise StopConsumer()
 
     # Receive message from WebSocket
     async def receive(self, text_data):
