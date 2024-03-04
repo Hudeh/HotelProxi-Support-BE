@@ -1,0 +1,11 @@
+{% autoescape off %}
+Hi Marketer,
+
+There is a new contact form form user details. 
+Name: {{name}}
+Email: {{email}}
+Phone: {{phone}}
+subject: {{subject}}
+Message: {{message}}
+
+{% endautoescape %}

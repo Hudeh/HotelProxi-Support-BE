@@ -1,0 +1,9 @@
+{% autoescape off %}
+Dear {{name}},
+
+We have recieved your enquiry on hotelproxi HMS, one of our team member will conatact you shortly.
+
+Best Regards,
+The HotelProxi Team
+
+{% endautoescape %}
